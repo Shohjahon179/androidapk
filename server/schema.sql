@@ -1,0 +1,30 @@
+CREATE TABLE IF NOT EXISTS users (
+  id   TEXT PRIMARY KEY,
+  data JSONB NOT NULL
+);
+CREATE UNIQUE INDEX IF NOT EXISTS users_username_uq ON users ((data->>'username'));
+
+CREATE TABLE IF NOT EXISTS records (
+  id   TEXT PRIMARY KEY,
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS messages (
+  id   TEXT PRIMARY KEY,
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS payments (
+  id   TEXT PRIMARY KEY,
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS settings (
+  id   TEXT PRIMARY KEY,
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS receipts (
+  id    TEXT PRIMARY KEY,
+  image TEXT NOT NULL
+);
